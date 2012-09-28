@@ -59,6 +59,9 @@ grid-columns five-columns-at-960px {
 ```
 
 So instead of true, you now see what your function actually returned. Simple eh?
+
+[Check out the actual example this came out of](https://github.com/joefiorini/sassquatch/tree/master/example).
+
 ### Interested?
 
 Okay, I know it could be a lot better. But it's a start. To say there's a lot of work to be done is an understatement. We aren't at the point where we can know everything we need to do. But there are a few things that would be nice for this little project:
