@@ -1,0 +1,33 @@
+@import "../functions";
+@import "../../lib/matchers";
+$base-size: 10px;
+
+strip-units {
+  remove-from-em {
+    expect: to-equal(strip-units(1em), 1);
+  }
+}
+
+to-px {
+  basic-conversion {
+    expect: to-equal(to-px(1em), 10px);
+  }
+}
+
+to-em {
+  basic-conversion {
+    expect: to-equal(to-em(10px), 1em);
+  }
+
+  convert-with-em-context {
+    expect: to-equal(to-em(10px, 2em), .5em);
+  }
+
+  convert-with-em-context-messy {
+    expect: to-almost-equal(to-em(14px, 3em), .46667em);
+  }
+
+  convert-with-px-context {
+    expect: to-equal(to-em(10px, 20px), .5em);
+  }
+}

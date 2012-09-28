@@ -1,0 +1,22 @@
+@function strip-units($number) {
+  $unit: unit($number);
+  $one: 1px;
+  @if $unit == em {
+    $one: 1em;
+  } @else if $unit == px {
+    $one: 1px;
+  }
+  @return $number/$one;
+}
+
+@function to-px($em){
+  @return strip-units($em) * $base-size;
+}
+
+@function to-em($px,$context:1em){
+  @if unit($context) == em {
+    @return $px / to-px($context) * 1em;
+  } @else if unit($context) == px {
+    @return $px / $context * 1em;
+  }
+}

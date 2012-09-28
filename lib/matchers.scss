@@ -1,0 +1,15 @@
+@function to-equal($actual, $expected){
+  @if $expected == $actual {
+    @return true;
+  } @else {
+    @return $actual;
+  }
+}
+
+@function to-almost-equal($actual, $expected, $variance: .5){
+  @if $actual - $expected <= $variance {
+    @return true;
+  } @else {
+    @return $actual;
+  }
+}
